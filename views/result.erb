@@ -19,7 +19,18 @@
   <body>
     
     <div class="container-fluid">
-      <h1>Hello World!</h1>
+      <h1><%= @user_name.capitalize %></h1><br>
+      <div class="col-md-3">
+      <img src=<%= @user_img  %>>
+      </div>
+      <div class="col-md-4">
+        <h4>Summary</h4>
+      <h5><%= @user_summary %></h5>
+      <h4>Origninal language</h4>
+      <h5><%= @user_language %></h5>
+      <h4>Genres</h4>
+      <h5><%= @user_genres %></h5>
+      </div>
     </div>
     
   </body>
