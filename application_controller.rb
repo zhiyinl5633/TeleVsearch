@@ -16,10 +16,11 @@ class ApplicationController < Sinatra::Base
   post '/result' do
     @show_name = params[:name] 
     @show_info = Show.new(@show_name)
-    @show_name = @show_info.get_name
-    # @show_img = @show_info.get_img
-    @show_summary = @show_info.get_summary
-    @show_genres = @show_info.get_genres
+    @show_info.get_name
+    @show_info.get_img
+    @show_info.get_summary
+    @show_info.get_language
+    @show_info.get_genres
     erb :result
   end
   
