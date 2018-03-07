@@ -9,7 +9,7 @@ url = 'http://api.tvmaze.com/singlesearch/shows?q=w'
 uri = URI.parse(URI.encode(url.strip))
 response = Net::HTTP.get(uri)
 result = JSON.parse(response)
-# puts result
+pp result
 # puts result["name"]
 # puts result["image"]["medium"]
 # puts result["summary"]
@@ -26,11 +26,6 @@ class Show
         @type = ' '
     end
 
-    def get_img(name)
-        url = 'http://api.tvmaze.com/singlesearch/shows?q=#{name}'
-        uri = URI(url)
-
-    
    
     def get_info(type)
         @name.gsub(" ", "+")
