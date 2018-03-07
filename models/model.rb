@@ -3,15 +3,15 @@ require 'json'
 require 'pp'
 
  
-url = 'http://api.tvmaze.com/singlesearch/shows?q=w'
-uri = URI(url)
-response = Net::HTTP.get(uri)
-result = JSON.parse(response)
-puts result["name"]
-puts result["image"]["original"]
-puts result["summary"]
-puts result["language"]
-puts result["genres"]
+# url = 'http://api.tvmaze.com/singlesearch/shows?q=w'
+# uri = URI(url)
+# response = Net::HTTP.get(uri)
+# putsresult = JSON.parse(response)
+# puts result["name"]
+# puts result["image"]["original"]
+# puts result["summary"]
+# puts result["language"]
+# puts result["genres"]
 
 # class Show
 #     def initialize(name) 
@@ -32,8 +32,9 @@ puts result["genres"]
     #     result["language"]
     #     result["genres"]
     # end
+    
     def get_name(name)
-        url = 'http://api.tvmaze.com/singlesearch/shows?q=w'
+        url = 'http://api.tvmaze.com/singlesearch/shows?q=#{name}'
         uri = URI(url)
         response = Net::HTTP.get(uri)
         result = JSON.parse(response)
@@ -41,28 +42,28 @@ puts result["genres"]
     
     end
     def get_img(name)
-        url = 'http://api.tvmaze.com/singlesearch/shows?q=w'
+        url = 'http://api.tvmaze.com/singlesearch/shows?q=#{name}'
         uri = URI(url)
         response = Net::HTTP.get(uri)
         result = JSON.parse(response)
         result["image"]["original"]
     end
     def get_summary(name)
-        url = 'http://api.tvmaze.com/singlesearch/shows?q=w'
+        url = 'http://api.tvmaze.com/singlesearch/shows?q=#{name}'
         uri = URI(url)
         response = Net::HTTP.get(uri)
         result = JSON.parse(response)
         result["summary"]
     end
     def get_language(name)
-        url = 'http://api.tvmaze.com/singlesearch/shows?q=w'
+        url = 'http://api.tvmaze.com/singlesearch/shows?q=#{name}'
         uri = URI(url)
         response = Net::HTTP.get(uri)
         result = JSON.parse(response)
         result["language"]
     end
      def get_genres(name)
-        url = 'http://api.tvmaze.com/singlesearch/shows?q=w'
+        url = 'http://api.tvmaze.com/singlesearch/shows?q=#{name}'
         uri = URI(url)
         response = Net::HTTP.get(uri)
         result = JSON.parse(response)
