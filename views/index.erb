@@ -10,23 +10,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+    <style>
+    </style>
     <!-- custom css -->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/index_style.css" type="text/css">
     <!-- custom JS -->
     <script src="js/script.js"></script>
   </head>
-  <body background = "tvbg.png">
-    <image src = 'images/tvbg.png'></image>
-    <!--<div class="jumbotron jumbotron-fluid container text-center">-->
-      <h1>Welcome to TeleVsearch!</h1>
-      <h3>Enter a show title to find out more information about the show!</h3>
+  <body>
+    <div class="container text-center" id="form">
+      <h1>TeleVsearch</h1>
+      <h3>Enter the title of your favorite show!</h3>
       <form method="post" action="/result">
-        <p>Show name: <input type="text" name="name"></p>
-        <br>
-      <button type="submit" value="submit">Submit</button>
+        <input type="text" name="name" size="30">
+        <button type="submit" value="submit">Submit</button>
       </form>
-    <!--</div>-->
+    </div>
     
   </body>
 </html>

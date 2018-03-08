@@ -19,13 +19,11 @@ pp result
 
 class Show
     attr_reader :name, :language, :type
-
     
     def initialize (name)
         @name = name
         @type = ' '
     end
-
    
     def get_info(type)
         @name.gsub(" ", "+")
@@ -36,7 +34,6 @@ class Show
         result[type]
     end
 
-    
     def get_name
         self.get_info('name')
     end
@@ -57,7 +54,6 @@ class Show
     def get_genres
        genres =  self.get_info('genres')
        genres.join(', ')
-
     end
 
 end
