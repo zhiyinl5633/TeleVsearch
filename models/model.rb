@@ -2,9 +2,8 @@ require 'net/http'
 require 'json'
 require 'pp'
 
- 
 
-url = 'http://api.tvmaze.com/singlesearch/shows?q=w'
+url = 'http://api.tvmaze.com/singlesearch/shows?q=bts'
 # uri = URI(url)
 uri = URI.parse(URI.encode(url.strip))
 response = Net::HTTP.get(uri)
