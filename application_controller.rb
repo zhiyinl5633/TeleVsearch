@@ -20,6 +20,7 @@ class ApplicationController < Sinatra::Base
     @show_info.get_summary
     @show_info.get_language
     @show_info.get_genres
+    @show_info.get_site
     erb :result
   end
   

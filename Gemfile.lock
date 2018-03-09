@@ -1,15 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    clearbit (0.2.8)
+      nestful (~> 1.1.0)
     coderay (1.1.1)
-    domain_name (0.5.20170404)
-      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.2.1)
-    http-cookie (1.0.3)
-      domain_name (~> 0.5)
     method_source (0.8.2)
-    mime-types (2.99.3)
-    netrc (0.11.0)
+    nestful (1.1.3)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -17,10 +14,6 @@ GEM
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
-    rest-client (1.8.0)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 3.0)
-      netrc (~> 0.7)
     shotgun (0.9.2)
       rack (>= 1.0)
     sinatra (1.4.8)
@@ -29,21 +22,16 @@ GEM
       tilt (>= 1.3, < 3)
     slop (3.6.0)
     tilt (2.0.6)
-    tvmaze (0.1.0)
-      rest-client (~> 1.8.0)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  clearbit
   dotenv
   pry
   shotgun
   sinatra
-  tvmaze
 
 BUNDLED WITH
    1.16.1
