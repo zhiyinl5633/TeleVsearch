@@ -3,9 +3,8 @@ require 'json'
 require 'pp'
 require 'clearbit'
 
- 
 
-url = 'http://api.tvmaze.com/singlesearch/shows?q=w'
+url = 'http://api.tvmaze.com/singlesearch/shows?q=bts'
 # uri = URI(url)
 uri = URI.parse(URI.encode(url.strip))
 response = Net::HTTP.get(uri)
@@ -21,13 +20,11 @@ pp result
 
 class Show
     attr_reader :name, :language, :type
-
     
     def initialize (name)
         @name = name
         @type = ' '
     end
-
    
     def get_info(type)
         @name.gsub(" ", "+")
@@ -38,7 +35,6 @@ class Show
         result[type]
     end
 
-    
     def get_name
         self.get_info('name')
     end
@@ -59,7 +55,6 @@ class Show
     def get_genres
        genres =  self.get_info('genres')
        genres.join(', ')
-
     end
     def get_site
         site =self.get_info('officialSite')
