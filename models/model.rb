@@ -56,20 +56,25 @@ class Show
        genres =  self.get_info('genres')
        genres.join(', ')
     end
+    
     def get_site
         site =self.get_info('officialSite')
+        if site.to_s.strip.empty? == true
+         "Sorry no logo assoicated with this company"
+        else
         site_array = site.split(//)
         imp_index_array= site_array.each_index.select {|i| site_array[i]=="/"}
         imp_index = (imp_index_array[2].to_f)  + 1
         site_array.slice!(imp_index..-1)
         logo_link= "https://logo.clearbit.com/" + "#{site_array.join}"
        return logo_link
+   end
     end
 end
 
 
 
-
+# 
 # show = Show.new("w")
 #  show.get_name
 #  show.get_img
