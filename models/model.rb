@@ -9,7 +9,7 @@ url = 'http://api.tvmaze.com/singlesearch/shows?q=bts'
 uri = URI.parse(URI.encode(url.strip))
 response = Net::HTTP.get(uri)
 result = JSON.parse(response)
-pp result
+# pp result
 # puts result["name"]
 # puts result["image"]["medium"]
 # puts result["summary"]
@@ -27,12 +27,18 @@ class Show
     end
    
     def get_info(type)
-        @name.gsub(" ", "+")
-        url = 'http://api.tvmaze.com/singlesearch/shows?q=' + "#{@name}" 
-        uri = URI.parse(URI.encode(url.strip))
-        response = Net::HTTP.get(uri)
-        result = JSON.parse(response)
-        result[type]
+        begin
+            @name.gsub(" ", "+")
+            url = 'http://api.tvmaze.com/singlesearch/shows?q=' + "#{@name}" 
+            uri = URI.parse(URI.encode(url.strip))
+            response = Net::HTTP.get(uri)
+            result = JSON.parse(response)
+            puts "working!"
+            result[type]
+        rescue
+            puts "not working!"
+            result = "Sorry, no #{type} is found"
+        end
     end
 
     def get_name
@@ -56,14 +62,22 @@ class Show
        genres =  self.get_info('genres')
        genres.join(', ')
     end
+    
     def get_site
-        site =self.get_info('officialSite')
-        site_array = site.split(//)
-        imp_index_array= site_array.each_index.select {|i| site_array[i]=="/"}
-        imp_index = (imp_index_array[2].to_f)  + 1
-        site_array.slice!(imp_index..-1)
-        logo_link= "https://logo.clearbit.com/" + "#{site_array.join}"
-       return logo_link
+        begin
+            site =self.get_info('officialSite')
+            site_array = site.split(//)
+            imp_index_array= site_array.each_index.select {|i| site_array[i]=="/"}
+            imp_index = (imp_index_array[2].to_f)  + 1
+            site_array.slice!(imp_index..-1)
+            logo_link= "https://logo.clearbit.com/" + "#{site_array.join}"
+            puts "logo_link: #{logo_link}"
+            logo_link
+        rescue
+            puts "logo link error"
+            "http://www.fakingnews.firstpost.com/wp-content/uploads/2015/01/default.png"
+        end
+        
     end
 end
 
