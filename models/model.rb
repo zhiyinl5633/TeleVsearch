@@ -64,6 +64,7 @@ class Show
     end
     
     def get_site
+
         begin
             site =self.get_info('officialSite')
             site_array = site.split(//)
