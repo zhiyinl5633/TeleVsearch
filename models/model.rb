@@ -33,10 +33,8 @@ class Show
             response = Net::HTTP.get(uri)
             result = JSON.parse(response)
             if result[type].empty?
-                puts "not working!"
                 "Sorry, no #{type} is found"
             else
-                puts "working!"
                 result[type]
             end
     end
@@ -59,8 +57,12 @@ class Show
     end
     
     def get_genres
-       genres =  self.get_info('genres')
-       genres.join(', ')
+        genres =  self.get_info('genres')
+        if genres.kind_of?(Array)
+           genres.join(', ')
+        else
+            genres
+        end
     end
     
     def get_site
@@ -75,7 +77,6 @@ class Show
             puts "logo_link: #{logo_link}"
             logo_link
         rescue
-            puts "logo link error"
             "http://www.fakingnews.firstpost.com/wp-content/uploads/2015/01/default.png"
         end
         
