@@ -1,3 +1,35 @@
-body { 
+html,
+body {
+	width: 100%;
+	height: auto;
+}
 
+body {
+	background-image: url(http://www.simpsoncrazy.com/content/pictures/onetimers/simpsons-tv.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+div{
+    padding-top: 250px;
+}
+
+h1,h3{
+	font-family: 'Press Start 2P', cursive;
+	color:white;
+}
+
+h1{
+	font-size: 105px;
+}
+
+h3{
+	font-size: 30px;
+}
+
+button{
+	font-family: 'Press Start 2P', cursive;
+	color:#6666ff;
 }

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Result</title>
+    <title>TeleVsearch</title>
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery -->
@@ -11,7 +12,7 @@
     <!-- bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--fonts-->
-    <!--<link href="https://fonts.googleapis.com/css?family=Crushed|Fredericka+the+Great|Frijole|Kranky|Megrim|Press+Start+2P" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">    
     <!-- custom css -->
     <link rel="stylesheet" href="css/result_style.css" type="text/css">
     <!-- custom JS -->
@@ -19,11 +20,14 @@
   </head>
   <body>
     
-    <div class="container">
+    <div class="container" id="title">
       <h1><%= @show_info.get_name %></h1><br>
+    </div>
+    
       <div class="col-md-3">
       <img src=<%= @show_info.get_img  %>>
       </div>
+      
       <div class="col-md-4">
         <h4>Summary</h4>
       <h5><%=  @show_info.get_summary %></h5>
@@ -32,9 +36,10 @@
       <h4>Genres</h4>
       <h5><%=  @show_info.get_genres %></h5>
       <h4>Company produced the show</h4>
-      <img src= <%=@show_info.get_site %> width="150px" height= "150px">
+      <img src= <%=@show_info.get_site %> width=auto height= auto>
       </div>
-    </div>
+      
+   
     
   </body>
 </html>
