@@ -4,7 +4,7 @@ require 'pp'
 require 'clearbit'
 
 
-url = 'http://api.tvmaze.com/singlesearch/shows?q=bts'
+url = 'http://api.tvmaze.com/singlesearch/shows?q=my-ghost-story'
 # uri = URI(url)
 uri = URI.parse(URI.encode(url.strip))
 response = Net::HTTP.get(uri)
@@ -27,18 +27,18 @@ class Show
     end
    
     def get_info(type)
-        begin
             @name.gsub(" ", "+")
             url = 'http://api.tvmaze.com/singlesearch/shows?q=' + "#{@name}" 
             uri = URI.parse(URI.encode(url.strip))
             response = Net::HTTP.get(uri)
             result = JSON.parse(response)
-            puts "working!"
-            result[type]
-        rescue
-            puts "not working!"
-            result = "Sorry, no #{type} is found"
-        end
+            if result[type].empty?
+                puts "not working!"
+                "Sorry, no #{type} is found"
+            else
+                puts "working!"
+                result[type]
+            end
     end
 
     def get_name
@@ -82,11 +82,9 @@ class Show
 end
 
 
-
-
-# show = Show.new("w")
+show = Show.new("my ghost story")
 #  show.get_name
 #  show.get_img
 #  show.get_summary
-#  show.get_genres
+ show.get_genres
 #  show.get_site
