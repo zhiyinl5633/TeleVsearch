@@ -24,14 +24,14 @@
       <h1><%= @show_info.get_name %></h1><br>
     </div>
     
-      <div class="col-md-3">
+      <div id="image" class="col-md-3">
       <img src=<%= @show_info.get_img  %>>
       </div>
       
-      <div class="col-md-4">
+      <div id ="info" class="col-md-4">
         <h4>Summary</h4>
       <h5><%=  @show_info.get_summary %></h5>
-      <h4>Oiginal language</h4>
+      <h4>Original language</h4>
       <h5><%=  @show_info.get_language %></h5>
       <h4>Genres</h4>
       <h5><%=  @show_info.get_genres %></h5>

@@ -13,16 +13,24 @@ body {
 }
 
 div{
-    padding-top: 250px;
+    padding-top: 50px;
+    margin-left: 200px;
 }
 
+#image{
+    left: 200px;
+}
+
+#info{
+   right: 200px;
+}
 h1,h3{
 	font-family: 'Press Start 2P', cursive;
 	color:white;
 }
 
 h1{
-	font-size: 105px;
+	font-size: 50px;
 }
 
 h3{
@@ -32,4 +40,8 @@ h3{
 button{
 	font-family: 'Press Start 2P', cursive;
 	color:#6666ff;
+}
+
+h4,h5{
+    color:white;
 }
