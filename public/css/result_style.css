@@ -14,11 +14,12 @@ body {
 
 div{
     padding-top: 50px;
-    margin-left: 200px;
+    margin-left: 100px;
 }
 
+
 #image{
-    left: 200px;
+    /*left: 200px;*/
 }
 
 #info{
@@ -37,11 +38,43 @@ h3{
 	font-size: 30px;
 }
 
-button{
-	font-family: 'Press Start 2P', cursive;
-	color:#6666ff;
-}
 
 h4,h5{
     color:white;
+}
+
+@media(min-width:400px) {
+    h1 {
+        font-size: 40px;
+        padding-left: 25px;
+    }
+}
+
+@media(min-width:768px) {
+		div{
+    padding-top: 1px;
+    margin-left: 100px;
+}	
+    h1 {
+        font-size: 50px;
+        padding-left: 25px;
+    }
+}
+
+@media(min-width:992px) {
+	div{
+    padding-top: 1px;
+    margin-left: 100px;
+}	
+    h1 {
+        font-size: 50px;
+        padding-left: 25px;
+    }
+}
+
+@media(min-width:1080px) {
+    h1 {
+        font-size: 50px;
+        padding-left: 25px;
+    }
 }

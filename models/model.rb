@@ -75,7 +75,7 @@ class Show
             puts "logo_link: #{logo_link}"
             logo_link
         rescue
-            "http://www.fakingnews.firstpost.com/wp-content/uploads/2015/01/default.png"
+            "http://www.freeiconspng.com/uploads/no-image-icon-15.png"
         end
         
     end

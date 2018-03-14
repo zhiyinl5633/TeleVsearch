@@ -20,25 +20,26 @@
   </head>
   <body>
     
-    <div class="container" id="title">
-      <h1><%= @show_info.get_name %></h1><br>
+    <div class="container text-center">
+      <h1 style="font-size:6vw;"><%= @show_info.get_name %></h1><br>
     </div>
-    
-      <div id="image" class="col-md-3">
+    <div class="container">
+      <div  class="col-md-3">
       <img src=<%= @show_info.get_img  %>>
       </div>
+   
       
-      <div id ="info" class="col-md-4">
-        <h4>Summary</h4>
+      <div class="col-md-4">
+        <h4><b>Summary</b></h4>
       <h5><%=  @show_info.get_summary %></h5>
-      <h4>Original language</h4>
+      <h4><b>Original language</b></h4>
       <h5><%=  @show_info.get_language %></h5>
-      <h4>Genres</h4>
+      <h4><b>Genres</b></h4>
       <h5><%=  @show_info.get_genres %></h5>
-      <h4>Company produced the show</h4>
+      <h4><b>Production Company</b></h4>
       <img src= <%=@show_info.get_site %> width=auto height= auto>
       </div>
-      
+    </div>  
    
     
   </body>
