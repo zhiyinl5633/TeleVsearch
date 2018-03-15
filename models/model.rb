@@ -3,6 +3,7 @@ require 'json'
 require 'pp'
 require 'clearbit'
 
+#using the url of the api to have access to info of the show from their api
 url = 'http://api.tvmaze.com/singlesearch/shows?q=my-ghost-story'
 # uri = URI(url)
 uri = URI.parse(URI.encode(url.strip))
@@ -25,6 +26,7 @@ class Show
         @type = ' '
     end
    
+   #Template to get info from the api: need to subsitute the name,summary, etc to get the info
     def get_info(type)
             @name.gsub(" ", "+")
             url = 'http://api.tvmaze.com/singlesearch/shows?q=' + "#{@name}" 
@@ -37,24 +39,29 @@ class Show
                 result[type]
             end
     end
-
+    
+    #call the #get_info by plugging name to get the name of the show
     def get_name
         self.get_info('name')
     end
     
+    #call the #get_info by plugging image to get the image of the show
     def get_img
         img = self.get_info('image')
         img["medium"]
     end
     
+    #call the #get_info by plugging summary to get the summary of the show
     def get_summary
         self.get_info('summary')
     end
     
+    #call the #get_info by plugging language to get the language of the show
     def get_language
         self.get_info('language')
     end
     
+    #call the #get_info by plugging genres to get the genres of the show
     def get_genres
         genres =  self.get_info('genres')
         if genres.kind_of?(Array)
@@ -64,6 +71,7 @@ class Show
         end
     end
     
+    #call the #get_info by plugging site of the company it produced from to get the link of the company and use part of that link to get a logo image of the company
     def get_site
         begin
             site =self.get_info('officialSite')
@@ -82,7 +90,7 @@ class Show
 end
 
 
-show = Show.new("my ghost story")
+#  show = Show.new("my ghost story")
 #  show.get_name
 #  show.get_img
 #  show.get_summary

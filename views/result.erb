@@ -20,21 +20,31 @@
   </head>
   <body>
     
+    <!--to display the name of the show-->
     <div class="container" id="title">
-      <h1><%= @show_info.get_name %></h1><br>
+      <h1><%= @show_info.get_name %></h1><br> 
     </div>
     
+    <!--to display the image of the show-->
       <div id="image" class="col-md-3">
       <img src=<%= @show_info.get_img  %>>
       </div>
       
       <div id ="info" class="col-md-4">
+        
+      <!--to display the summary of the show-->
         <h4>Summary</h4>
       <h5><%=  @show_info.get_summary %></h5>
+      
+      <!--to display the language of the show-->
       <h4>Original language</h4>
       <h5><%=  @show_info.get_language %></h5>
+      
+      <!--to display the genres of the show-->
       <h4>Genres</h4>
       <h5><%=  @show_info.get_genres %></h5>
+      
+      <!--to display the company's logo that produced the show-->
       <h4>Company produced the show</h4>
       <img src= <%=@show_info.get_site %> width=auto height= auto>
       </div>
