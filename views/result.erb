@@ -17,9 +17,11 @@
     <link rel="stylesheet" href="css/result_style.css" type="text/css">
     <!-- custom JS -->
     <script src="js/script.js"></script>
+     <!--cursor-->
+    <style type="text/css">* {cursor: url(http://cur.cursors-4u.net/games/gam-10/gam987.ani), url(http://cur.cursors-4u.net/games/gam-10/gam987.png), auto !important;}</style><a href="http://www.cursors-4u.com/cursor/2009/06/02/animated-dragonica-star-glove-pointer.html" target="_blank" title="Animated Dragonica Star Glove Pointer"><img src="http://cur.cursors-4u.net/cursor.png" border="0" alt="Animated Dragonica Star Glove Pointer" style="position:absolute; top: 0px; right: 0px;" /></a>
   </head>
   <body>
-    
+
     <div class="container text-center">
       <h1 style="font-size:6vw;"><%= @show_info.get_name %></h1><br><br><br><br>
     </div>
@@ -29,7 +31,6 @@
       <img src=<%= @show_info.get_img %> width= auto height="350px" >
       </div>
    
-      
       <div class="col-md-7" id="info">
       <h4 style="font-size:2vw;"><b>Summary</b></h4>
       <h5 style="font-size:1vw;"><%=  @show_info.get_summary %></h5>
