@@ -21,22 +21,23 @@
   <body>
     
     <div class="container text-center">
-      <h1 style="font-size:6vw;"><%= @show_info.get_name %></h1><br>
+      <h1 style="font-size:6vw;"><%= @show_info.get_name %></h1><br><br><br><br>
     </div>
-    <div class="container">
-      <div  class="col-md-3">
-      <img src=<%= @show_info.get_img  %>>
+    
+    <div class="container" >
+      <div  class="col-md-2" id="image">
+      <img src=<%= @show_info.get_img %> width= auto height="350px" >
       </div>
    
       
-      <div class="col-md-4">
-        <h4><b>Summary</b></h4>
-      <h5><%=  @show_info.get_summary %></h5>
-      <h4><b>Original language</b></h4>
-      <h5><%=  @show_info.get_language %></h5>
-      <h4><b>Genres</b></h4>
-      <h5><%=  @show_info.get_genres %></h5>
-      <h4><b>Production Company</b></h4>
+      <div class="col-md-7" id="info">
+      <h4 style="font-size:2vw;"><b>Summary</b></h4>
+      <h5 style="font-size:1vw;"><%=  @show_info.get_summary %></h5>
+      <h4 style="font-size:2vw;"><b>Original language</b></h4>
+      <h5 style="font-size:1vw;"><%=  @show_info.get_language %></h5>
+      <h4 style="font-size:2vw;"><b>Genres</b></h4>
+      <h5 style="font-size:1vw;"><%=  @show_info.get_genres %></h5>
+      <h4 style="font-size:2vw;"><b>Production Company</b></h4>
       <img src= <%=@show_info.get_site %> width=auto height= auto>
       </div>
     </div>  
